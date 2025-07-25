@@ -1,6 +1,8 @@
 # 💻 Client Sortable Table UI
+
+Client Table with sorttable functionality. Built using **React**, **TailwindCSS**, **Dnd-Kit**,and **Shadcdn**.
+
 ---
-Client Table with sorttable functionality. Built using **React**, **TailwindCSS**, and **Shadcdn**, this dashboard supports product operations, sorting, pagination, and cart preview for stock management.
 
 <img width="100" height="100" alt="live gif" src="https://github.com/user-attachments/assets/24d4bf79-e53a-4a64-9fa4-6c6bad86eef0" />
 
