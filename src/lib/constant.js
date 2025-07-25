@@ -11,6 +11,15 @@ export const availableFields = [
 
 export const sortOptions = [
   {
+    field: "clientId",
+    label: "Client ID",
+    options: [
+      { value: "asc", label: "A-Z" },
+      { value: "desc", label: "Z-A" },
+    ],
+    selected: "",
+  },
+  {
     field: "clientName",
     label: "Client Name",
     options: [
@@ -34,15 +43,6 @@ export const sortOptions = [
     options: [
       { value: "newest", label: "Newest to Oldest" },
       { value: "oldest", label: "Oldest to Newest" },
-    ],
-    selected: "",
-  },
-  {
-    field: "clientId",
-    label: "Client ID",
-    options: [
-      { value: "asc", label: "A-Z" },
-      { value: "desc", label: "Z-A" },
     ],
     selected: "",
   },
