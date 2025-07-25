@@ -46,11 +46,17 @@ function App() {
 
   // Save applied sort criteria to localStorage whenever it changes
   function applySort(selectedSortCriteria) {
-    localStorage.setItem(
-      "clientappliedSortCriteria",
-      JSON.stringify(selectedSortCriteria)
-    );
-    setappliedSortCriteria(selectedSortCriteria);
+    if (selectedSortCriteria.length === 0) {
+      localStorage.clear();
+      setappliedSortCriteria([])
+    } else {
+      localStorage.setItem(
+        "clientappliedSortCriteria",
+        JSON.stringify(selectedSortCriteria)
+      );
+      setappliedSortCriteria(selectedSortCriteria);
+    }
+
     setShowSortPanel(false);
   }
 
