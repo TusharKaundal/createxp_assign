@@ -38,37 +38,37 @@ Client Table with sorttable functionality. Built using **React**, **TailwindCSS*
 
 ## 🛠️ Setup Instructions
 
-1. **Clone the Repository**
+### 1. **Clone the Repository**
    ```bash
    https://github.com/TusharKaundal/createxp_assign.git
    cd Admin_Ecommerce_App
    ```
-2. **Install Dependencies**
+### 2. **Install Dependencies**
 
    ```bash
    npm install
 
    ```
 
-3. **Run the Development Server**
+### 3. **Run the Development Server**
 
    ```bash
    npm run dev
 
    ```
 
-4. **Build for Production**
+### 4. **Build for Production**
 
    ```bash
    npm run build
 
    ```
 
-5. **Demo of Tab Change**(#5-demo-of-tab-change)
+### 5. **Demo of Tab Change**
 
 https://github.com/user-attachments/assets/3a1b4021-a4c3-4ba9-8842-8d2d8b92b130
 
-6. **Demo of Draggle filter**
+### 6. **Demo of Draggle filter**
 
 https://github.com/user-attachments/assets/7abcc008-5b7a-49d7-b615-bab16f23eb56
 
