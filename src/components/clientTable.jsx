@@ -13,13 +13,13 @@ export function ClientTable({ clients }) {
   const getStatusColor = (status) => {
     switch (status) {
       case "Active":
-        return "bg-green-100 text-green-800 hover:bg-green-100";
+        return "bg-green-100 text-green-800 hover:bg-green-200";
       case "Inactive":
-        return "bg-gray-100 text-gray-800 hover:bg-gray-100";
+        return "bg-gray-100 text-gray-800 hover:bg-gray-200";
       case "Pending":
-        return "bg-yellow-100 text-yellow-800 hover:bg-yellow-100";
+        return "bg-yellow-100 text-yellow-800 hover:bg-yellow-200";
       default:
-        return "bg-gray-100 text-gray-800 hover:bg-gray-100";
+        return "bg-gray-100 text-gray-800 hover:bg-gray-200";
     }
   };
 
@@ -45,16 +45,20 @@ export function ClientTable({ clients }) {
         </TableHeader>
         <TableBody>
           {clients.map((client) => (
-            <TableRow key={client.id} className="hover:bg-gray-50/50">
+            <TableRow key={client.clientId} className="hover:bg-gray-50/50">
               <TableCell className="font-medium text-blue-600">
-                {client.id}
+                {client.clientId}
               </TableCell>
-              <TableCell className="font-medium">{client.name}</TableCell>
+              <TableCell className="font-medium">{client.clientName}</TableCell>
               <TableCell className="text-gray-600">{client.type}</TableCell>
               <TableCell className="text-gray-600">{client.email}</TableCell>
               <TableCell>
                 <div className="flex items-center gap-2">
-                  <div className="w-2 h-2 rounded-full bg-green-500" />
+                  <div
+                    className={`w-2 h-2 rounded-full ${getStatusColor(
+                      client.status
+                    )}`}
+                  />
                   <Badge
                     variant="secondary"
                     className={getStatusColor(client.status)}

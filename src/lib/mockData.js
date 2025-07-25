@@ -1,8 +1,8 @@
 export const mockClients = [
   {
-    id: 20,
-    name: "John Doe",
-    type: "Individual",
+    clientId: 20,
+    clientName: "John Doe",
+    type: "IndiclientIdual",
     email: "johndoe@email.com",
     status: "Active",
     createdAt: new Date("2024-01-15"),
@@ -10,8 +10,8 @@ export const mockClients = [
     updatedBy: "hello world",
   },
   {
-    id: 21,
-    name: "Test Test",
+    clientId: 21,
+    clientName: "Test Test",
     type: "Individual",
     email: "test@test.com",
     status: "Active",
@@ -20,8 +20,8 @@ export const mockClients = [
     updatedBy: "hello world",
   },
   {
-    id: 15,
-    name: "Acme Corporation",
+    clientId: 15,
+    clientName: "Acme Corporation",
     type: "Company",
     email: "contact@acme.com",
     status: "Active",
@@ -30,8 +30,8 @@ export const mockClients = [
     updatedBy: "admin user",
   },
   {
-    id: 8,
-    name: "Jane Smith",
+    clientId: 8,
+    clientName: "Jane Smith",
     type: "Individual",
     email: "jane.smith@email.com",
     status: "Pending",
@@ -40,8 +40,8 @@ export const mockClients = [
     updatedBy: "system",
   },
   {
-    id: 33,
-    name: "Tech Solutions Ltd",
+    clientId: 33,
+    clientName: "Tech Solutions Ltd",
     type: "Company",
     email: "info@techsolutions.com",
     status: "Inactive",
@@ -50,8 +50,8 @@ export const mockClients = [
     updatedBy: "manager",
   },
   {
-    id: 42,
-    name: "Alice Johnson",
+    clientId: 42,
+    clientName: "Alice Johnson",
     type: "Individual",
     email: "alice.j@email.com",
     status: "Active",
@@ -60,8 +60,8 @@ export const mockClients = [
     updatedBy: "hello world",
   },
   {
-    id: 7,
-    name: "Global Industries",
+    clientId: 7,
+    clientName: "Global Industries",
     type: "Company",
     email: "hello@global.com",
     status: "Active",
@@ -70,8 +70,8 @@ export const mockClients = [
     updatedBy: "admin user",
   },
   {
-    id: 55,
-    name: "Bob Wilson",
+    clientId: 55,
+    clientName: "Bob Wilson",
     type: "Individual",
     email: "bob.wilson@email.com",
     status: "Pending",

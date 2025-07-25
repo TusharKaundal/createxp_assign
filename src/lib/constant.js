@@ -1,11 +1,12 @@
 export const availableFields = [
-  { field: "name", label: "Client Name" },
+  { field: "clientId", label: "Client ID" },
+  { field: "clientName", label: "Client Name" },
+  { field: "type", label: "Client Type" },
+  { field: "email", label: "Email" },
+  { field: "status", label: "Status" },
   { field: "createdAt", label: "Created At" },
   { field: "updatedAt", label: "Updated At" },
-  { field: "id", label: "Client ID" },
-  { field: "email", label: "Email" },
-  { field: "type", label: "Client Type" },
-  { field: "status", label: "Status" },
+  { field: "updatedBy", label: "Updated By" },
 ];
 
 export const sortOptions = [

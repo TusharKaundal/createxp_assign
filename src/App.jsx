@@ -1,15 +1,7 @@
 import { Button } from "@/components/ui/button";
-import {
-  DndContext,
-  closestCenter,
-  KeyboardSensor,
-  PointerSensor,
-  useSensor,
-  useSensors,
-} from "@dnd-kit/core";
 import { Plus, Search, Filter, ArrowUpDown } from "lucide-react";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { ClientTable } from "@/components/clientTable";
 import { Badge } from "@/components/ui/badge";
 import {
@@ -17,17 +9,14 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@radix-ui/react-popover";
-// import { Card, CardContent, CardHeader } from "@/components/ui/card";
-import { sortOptions, tabList } from "./lib/constant";
+import { tabList } from "./lib/constant";
 import { mockClients } from "./lib/mockData";
 import SortPanel from "./components/sortPanel";
 
 function App() {
   const [activeTab, setActiveTab] = useState("all");
   const [showSortPanel, setShowSortPanel] = useState(false);
-  const [sortCriteria, setSortCriteria] = useState(sortOptions);
-  const [appliedsortCriteria, setAppliedSortCriteria] = useState([]);
-
+  const [appliedSortCriteria, setappliedSortCriteria] = useState([]);
 
   const filteredClients = useMemo(() => {
     let filtered = mockClients;
@@ -40,6 +29,60 @@ function App() {
 
     return filtered;
   }, [activeTab]);
+
+  // Load applied sort criteria from localStorage on mount
+  useEffect(() => {
+    const saved = JSON.parse(
+      localStorage.getItem("clientappliedSortCriteria") || "[]"
+    );
+    console.log(saved);
+    if (saved.length) {
+      try {
+        setappliedSortCriteria(saved);
+      } catch (error) {
+        console.error("Failed to parse saved sort criteria:", error);
+      }
+    }
+  }, []);
+
+  // Save applied sort criteria to localStorage whenever it changes
+  function applySort(selectedSortCriteria) {
+    localStorage.setItem(
+      "clientappliedSortCriteria",
+      JSON.stringify(selectedSortCriteria)
+    );
+    setappliedSortCriteria(selectedSortCriteria);
+    setShowSortPanel(false);
+  }
+
+  const sortedClients = useMemo(() => {
+    if (appliedSortCriteria.length === 0) return filteredClients;
+
+    const sortedClientData = [...filteredClients].sort((a, b) => {
+      for (const criteria of appliedSortCriteria) {
+        const aValue = a[criteria.field];
+        const bValue = b[criteria.field];
+        let comparison = 0;
+
+        if (aValue instanceof Date && bValue instanceof Date) {
+          comparison = aValue.getTime() - bValue.getTime();
+        } else if (typeof aValue === "string" && typeof bValue === "string") {
+          comparison = aValue.localeCompare(bValue);
+        } else if (typeof aValue === "number" && typeof bValue === "number") {
+          comparison = aValue - bValue;
+        }
+
+        if (comparison !== 0) {
+          return criteria.selected === "asc" || criteria.selected === "oldest"
+            ? comparison
+            : -comparison;
+        }
+      }
+      return 0;
+    });
+    return sortedClientData;
+  }, [filteredClients, appliedSortCriteria]);
+
   return (
     <div className="min-h-screen bg-gray-50/50">
       <div className="sm:mx-10 px-6 transition-[margin] duration-300 ease-in-out">
@@ -94,13 +137,20 @@ function App() {
                       className="relative bg-transparent shadow-none hover:bg-gray-100"
                     >
                       <ArrowUpDown className="h-4 w-4 text-gray-500" />
-                      <Badge className="absolute top-0 right-0 h-4 w-4 rounded-full p-0 flex items-center justify-center text-xs bg-red-600">
-                        2
-                      </Badge>
+                      {appliedSortCriteria.length > 0 && (
+                        <Badge className="absolute top-0 right-0 h-4 w-4 rounded-full p-0 flex items-center justify-center text-xs bg-red-600">
+                          {appliedSortCriteria.length}
+                        </Badge>
+                      )}
                     </Button>
                   </PopoverTrigger>
                   <PopoverContent className="absolute z-200 -right-2 p-4 shadow-sm border rounded-sm bg-white opacity-100 w-full min-w-150 ">
-                    <SortPanel sortCriteria={sortCriteria} />
+                    {showSortPanel && (
+                      <SortPanel
+                        applySort={applySort}
+                        appliedSortCriteria={appliedSortCriteria}
+                      />
+                    )}
                   </PopoverContent>
                 </Popover>
 
@@ -117,7 +167,7 @@ function App() {
               </div>
             </div>
             <div>
-              <ClientTable clients={filteredClients} />
+              <ClientTable clients={sortedClients} />
             </div>
           </div>
         </div>
