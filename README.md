@@ -1,6 +1,6 @@
 # 💻 Client Sortable Table UI
 
-Client Table with sorttable functionality. Built using **React**, **TailwindCSS**, **Dnd-Kit**,and **Shadcdn**.
+Client Table with sorttable functionality. Built using **React**, **TailwindCSS**, **Dnd-Kit** and **Shadcdn**.
 
 ---
 
