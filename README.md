@@ -64,7 +64,7 @@ Client Table with sorttable functionality. Built using **React**, **TailwindCSS*
 
    ```
 
-5. **Demo of Tab Change**
+5. **Demo of Tab Change**(#5-demo-of-tab-change)
 
 https://github.com/user-attachments/assets/3a1b4021-a4c3-4ba9-8842-8d2d8b92b130
 
