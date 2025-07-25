@@ -11,8 +11,8 @@ Client Table with sorttable functionality. Built using **React**, **TailwindCSS*
 ---
 ## 📚 Table of Contents
 
-- [🚀 Features Overview](#-features-overview)
 - [😊 Screenshot](#-screenshot)
+- [🚀 Features Overview](#-features-overview)
 - [🛠️ Setup Instructions](#️-setup-instructions)
   - [1. Clone the Repository](#1-clone-the-repository)
   - [2. Install Dependencies](#2-install-dependencies)
