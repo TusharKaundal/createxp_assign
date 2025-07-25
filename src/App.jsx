@@ -35,7 +35,6 @@ function App() {
     const saved = JSON.parse(
       localStorage.getItem("clientappliedSortCriteria") || "[]"
     );
-    console.log(saved);
     if (saved.length) {
       try {
         setappliedSortCriteria(saved);

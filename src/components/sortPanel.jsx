@@ -22,7 +22,6 @@ import { sortOptions } from "@/lib/constant";
 const SortPanel = ({ applySort, appliedSortCriteria }) => {
   const [sortCriteria, setSortCriteria] = useState(sortOptions);
   const [selectedSortCriteria, setselectedSortCriteria] = useState([]);
-  console.log(appliedSortCriteria);
   const sensors = useSensors(
     useSensor(PointerSensor),
     useSensor(KeyboardSensor, {
@@ -44,7 +43,6 @@ const SortPanel = ({ applySort, appliedSortCriteria }) => {
   };
 
   useEffect(() => {
-    console.log(appliedSortCriteria);
     setselectedSortCriteria(appliedSortCriteria);
 
     const appliedFields = appliedSortCriteria.map((c) => c.field);
