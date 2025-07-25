@@ -1,8 +1,26 @@
 # 💻 Client Sortable Table UI
 
 Client Table with sorttable functionality. Built using **React**, **TailwindCSS**, and **Shadcdn**, this dashboard supports product operations, sorting, pagination, and cart preview for stock management.
+---
+
+🔗 **Live Demo**: [https://createxp-assign.vercel.app/](https://createxp-assign.vercel.app/)
 
 ---
+## 📚 Table of Contents
+
+- [🚀 Features Overview](#-features-overview)
+- [🛠️ Setup Instructions](#️-setup-instructions)
+  - [1. Clone the Repository](#1-clone-the-repository)
+  - [2. Install Dependencies](#2-install-dependencies)
+  - [3. Run the Development Server](#3-run-the-development-server)
+  - [4. Build for Production](#4-build-for-production)
+  - [5. Demo of Tab Change](#5-demo-of-tab-change)
+  - [6. Demo of Draggle Filter](#6-demo-of-draggle-filter)
+
+---
+
+## 😊 Screenshot
+
 <img width="1918" height="865" alt="image" src="https://github.com/user-attachments/assets/41213c92-8d05-4455-a02d-2b9793434837" />
 
 ## 🚀 Features Overview
