@@ -31,7 +31,7 @@ Client Table with sorttable functionality. Built using **React**, **TailwindCSS*
 - ✅ **Client Table**
   - Display client table in a sortable using sort filter.
 - 🔃 **Sortable filter option**
-  - Drag & drop column reordering with persisted state.
+  - Drag & drop filter tabs reordering with persisted state.
 - 📱 **Responsive Design**
   - Layout using TailwindCSS.
 - ✨ **UI Enhancements**
